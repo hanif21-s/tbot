@@ -11,7 +11,7 @@ install:
 
 build:
 	@echo "Building the project..."
-	docker build -t hanifsossou125/zer_bot .
+	docker build --no-cache -t hanifsossou125/zer_bot .
 
 make deploy:
 	@echo "Deploying the project..."
