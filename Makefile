@@ -13,7 +13,7 @@ build:
 	@echo "Building the project..."
 	docker build --no-cache -t hanifsossou125/zer_bot .
 
-deploy: manage_container
+make deploy:
 	@echo "Deploying the project..."
 	docker run -d -p 8002:80 hanifsossou125/zer_bot
 
@@ -24,7 +24,3 @@ serve:
 test:
 	@echo "Running tests..."
 	.venv/bin/pytest
-
-manage_container:
-    @echo "Managing Docker container..."
-    ./manage_container.sh $(CONTAINER_NAME)
