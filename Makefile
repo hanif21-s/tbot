@@ -15,8 +15,9 @@ build:
 
 make deploy:
 	@echo "Deploying the project..." 
-	docker rm  -f $(docker ps -a --filter ancestor=hanifsossou125/zer_bot --format="{{.ID}}")
-	docker run -d -p 8002:80 hanifsossou125/zer_bot --name zer_bot
+	chmod +x deploy.sh
+	./deploy.sh
+	docker run -d -p 8002:80 hanifsossou125/zer_bot
 
 serve:
 	@echo "Starting development server..."
