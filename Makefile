@@ -11,11 +11,12 @@ install:
 
 build:
 	@echo "Building the project..."
-	docker build --no-cache -t hanifsossou125/zer_bot .
+	docker build --no-cache -t hanifsossou125/zer_bot:latest .
 
 make deploy:
 	@echo "Deploying the project..." 
-	docker run -d -p 8002:80 hanifsossou125/zer_bot
+	docker rm  -f $(docker ps -a --filter ancestor=hanifsossou125/zer_bot --format="{{.ID}}")
+	docker run -d -p 8002:80 hanifsossou125/zer_bot --name zer_bot
 
 serve:
 	@echo "Starting development server..."
