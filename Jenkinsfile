@@ -18,7 +18,7 @@ pipeline {
             steps {
                 script {
                     withCredentials([file(credentialsId: 'tbot-env-file', variable: 'ENV_FILE')]) {
-                        sh "source $ENV_FILE"
+                        sh "cat $ENV_FILE >> .env"
                     }
                 }
             }
