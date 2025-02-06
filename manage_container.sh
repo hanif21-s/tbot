@@ -6,7 +6,7 @@ if [ "$#" -eq 0 ]; then
     exit 1
 fi
 
-CONTAINER_NAME=$1
+CONTAINER_NAME=$zer_bot
 
 # Checks if the container exists
 if [ "$(docker ps -a -q -f name=$CONTAINER_NAME)" ]; then
